@@ -1,26 +1,23 @@
 <div id="adContainer">
     <div class="closeButton" onclick="closeAd()">×</div>
-    <div id="adOverlay" onclick="openAdLink()"></div>
-    <!-- AdForGames.com code begin -->
-    <script>
-      var afg = {};
-      afg.u = 6289;
-      afg.s = 7;
-      document.write("<scr" + "ipt src='//js.adforgames.com/cd.js'></scr" + "ipt>");
-      // Assuming we know the link that the ad redirects to
-      var adLink = "https://target-link-for-ad.com"; // Replace with the actual link
-    </script>
-    <!-- AdForGames.com code end -->
+    <div class="adContent">
+        <!-- AdForGames.com code begin -->
+        <script>
+            var afg = {};
+            afg.u = 6289;
+            afg.s = 21;
+            afg.centerWidth = 1000; // Set the width for the skin
+            afg.topPos = 0;
+            document.write("<sc" + "ript src='//js.adforgames.com/cd.js'></sc" + "ript>");
+        </script>
+        <!-- AdForGames.com code end -->
+        <p class="adMessage">This site runs on ads</p>
+    </div>
 </div>
 
 <script>
     function showAdContainer() {
         document.getElementById('adContainer').style.display = 'block';
-    }
-
-    function openAdLink() {
-        // Redirect to the ad link
-        window.location.href = adLink; // Using the adLink variable defined in the script
     }
 
     function closeAd() {
@@ -34,34 +31,33 @@
 <style>
     /* Ad container style */
     #adContainer {
-        width: 300px;
-        height: 250px;
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        background-color: #121212;
-        border-radius: 10px;
-        display: none;
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-        z-index: 1000;
-    }
-
-    /* Overlay covering the entire ad container for capturing clicks */
-    #adOverlay {
-        position: absolute;
-        top: 0;
-        left: 0;
         width: 100%;
         height: 100%;
-        cursor: pointer;
-        z-index: 1; /* Above the ad but below the close button */
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
+        display: none; /* Hide the ad container initially */
+        z-index: 1000; /* Ensure the ad is above other content */
+        justify-content: center; /* Center content */
+        align-items: center; /* Center content */
+    }
+
+    .adContent {
+        position: relative;
+        width: 1000px; /* Set the width for the skin */
+        max-width: 90%; /* Ensure it doesn't exceed the viewport width */
+        background-color: #121212;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+        padding: 20px; /* Add some padding */
+        text-align: center; /* Center the text */
     }
 
     .closeButton {
         position: absolute;
-        top: 5px;
-        right: 5px;
+        top: 10px;
+        right: 10px;
         font-size: 24px;
         color: #fff;
         cursor: pointer;
@@ -72,6 +68,11 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        z-index: 2; /* Ensure it appears above the overlay */
+    }
+
+    .adMessage {
+        color: #fff; /* White text color */
+        font-size: 18px; /* Font size */
+        margin: 20px 0; /* Margin around the message */
     }
 </style>
