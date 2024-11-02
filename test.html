@@ -1,43 +1,26 @@
 <div id="adContainer">
     <div class="closeButton" onclick="closeAd()">×</div>
     <div id="adOverlay" onclick="openAdLink()"></div>
-
-    <!-- Ad iframe for encapsulating the ad script -->
-    <iframe id="adIframe" srcdoc="
-        <script>
-            var afg = {};
-            afg.u = 6289;
-            afg.s = 7;
-            document.write('<scr' + 'ipt src=\'//js.adforgames.com/cd.js\'></scr' + 'ipt>');
-        </script>
-    " style="width: 100%; height: 100%; border: none;"></iframe>
+    <!-- AdForGames.com code begin -->
+    <script>
+      var afg = {};
+      afg.u = 6289;
+      afg.s = 7;
+      document.write("<scr" + "ipt src='//js.adforgames.com/cd.js'></scr" + "ipt>");
+      // Assuming we know the link that the ad redirects to
+      var adLink = "https://target-link-for-ad.com"; // Replace with the actual link
+    </script>
+    <!-- AdForGames.com code end -->
 </div>
 
 <script>
-    let adUrl = ""; // Variable to store the ad URL
-
     function showAdContainer() {
         document.getElementById('adContainer').style.display = 'block';
-
-        // Get the ad URL from the iframe
-        const adIframe = document.getElementById('adIframe');
-        adIframe.onload = function() {
-            try {
-                const iframeDoc = adIframe.contentDocument || adIframe.contentWindow.document;
-                const adLink = iframeDoc.querySelector('a');
-                if (adLink) {
-                    adUrl = adLink.href;
-                }
-            } catch (e) {
-                console.error("Could not access iframe content due to cross-origin restrictions.");
-            }
-        };
     }
 
     function openAdLink() {
-        if (adUrl) {
-            window.location.href = adUrl;
-        }
+        // Redirect to the ad link
+        window.location.href = adLink; // Using the adLink variable defined in the script
     }
 
     function closeAd() {
@@ -72,7 +55,7 @@
         width: 100%;
         height: 100%;
         cursor: pointer;
-        z-index: 1;
+        z-index: 1; /* Above the ad but below the close button */
     }
 
     .closeButton {
@@ -89,6 +72,6 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        z-index: 2;
+        z-index: 2; /* Ensure it appears above the overlay */
     }
 </style>
