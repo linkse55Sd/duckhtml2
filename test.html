@@ -1,15 +1,14 @@
 <div id="adContainer">
     <div class="closeButton" onclick="closeAd()">×</div>
     <div class="adContent">
+        <p class="adMessage">❤️ This site runs on ads ❤️</p>
 
-<script>var afg={};afg.u=6289;afg.s=7;
-document.write("<sc"+"ript src='//js.adforgames.com/cd.js'></sc"+"ript>");</script>
-
-        <p class="adMessage">This site runs on ads</p>
-
-<script>var afg={};afg.u=6289;afg.s=7;
-document.write("<sc"+"ript src='//js.adforgames.com/cd.js'></sc"+"ript>");</script>
-
+        <script>
+            var afg = {};
+            afg.u = 6289;
+            afg.s = 7;
+            document.write("<scr" + "ipt src='//js.adforgames.com/cd.js'></scr" + "ipt>");
+        </script>
     </div>
 </div>
 
@@ -23,7 +22,12 @@ document.write("<sc"+"ript src='//js.adforgames.com/cd.js'></sc"+"ript>");</scri
     }
 
     // Show the ad container after a 5-second delay
-    setTimeout(showAdContainer, 5000);
+    setTimeout(() => {
+        showAdContainer();
+        
+        // Set a 2-minute interval to display the ad again
+        setInterval(showAdContainer, 120000);
+    }, 5000);
 </script>
 
 <style>
