@@ -107,7 +107,6 @@
     }
 
     /* Ad container style */
-    /* Ad container style */
     #adContainer {
         width: 600px; /* Set a specific width for the popup */
         height: auto; /* Allow height to adjust based on content */
@@ -184,6 +183,20 @@
     </div>
   </nav>
 
+  <div id="adContainer">
+    <div class="closeButton" onclick="closeAd()">×</div>
+    <div class="adContent">
+        <p class="adMessage">❤️ This site runs on ads ❤️</p>
+
+        <script>
+            var afg = {};
+            afg.u = 6289;
+            afg.s = 7;
+            document.write("<scr" + "ipt src='//js.adforgames.com/cd.js'></scr" + "ipt>");
+        </script>
+    </div>
+</div>
+
   <h1 id="gameTitle">GAMENAMEHERE</h1>
 
   <div id="iframe-container"></div>
@@ -201,19 +214,7 @@
   </div>
 
 
-  <div id="adContainer">
-    <div class="closeButton" onclick="closeAd()">×</div>
-    <div class="adContent">
-        <p class="adMessage">❤️ This site runs on ads ❤️</p>
 
-        <script>
-            var afg = {};
-            afg.u = 6289;
-            afg.s = 7;
-            document.write("<scr" + "ipt src='//js.adforgames.com/cd.js'></scr" + "ipt>");
-        </script>
-    </div>
-</div>
 
   <script>
     function checkQueryParam(param) {
@@ -298,4 +299,3 @@
         setInterval(showAdContainer, 120000);
     }, 5000);
 </script>
-
