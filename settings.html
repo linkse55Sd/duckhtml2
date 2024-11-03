@@ -194,35 +194,44 @@
     }
 
             /* Ad container style */
-        #adContainer {
-            width: 300px;
-            height: 250px;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: #121212;
-            border-radius: 10px;
-            display: none; /* Hide the ad container initially */
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-            z-index: 1000; /* Ensure the ad is above other content */
-        }
+    /* Ad container style */
+    #adContainer {
+        width: 600px; /* Set a specific width for the popup */
+        height: auto; /* Allow height to adjust based on content */
+        position: fixed;
+        top: 20%; /* Position down from the top */
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #121212; /* Same background color as the ad */
+        display: none; /* Hide the ad container initially */
+        z-index: 1000; /* Ensure the ad is above other content */
+        border-radius: 10px; /* Rounded corners */
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+        padding: 20px; /* Padding around the content */
+        text-align: center; /* Center text */
+    }
 
-        .closeButton {
-            position: absolute;
-            top: 5px;
-            right: 5px;
-            font-size: 24px;
-            color: #fff;
-            cursor: pointer;
-            width: 30px;
-            height: 30px;
-            background-color: #333;
-            border-radius: 5px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+    .closeButton {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        font-size: 24px;
+        color: #fff;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        background-color: #333;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .adMessage {
+        color: #fff; /* White text color */
+        font-size: 18px; /* Font size */
+        margin: 10px 0; /* Margin around the message */
+    }
 
   </style>
 </head>
@@ -303,8 +312,19 @@
 
   <button class="action-button" onclick="applyChanges()">Apply Changes</button>
 </div>
-  
-<script type='text/javascript' src='//pl24530633.profitablecpmrate.com/8a/26/04/8a2604b7dc51db332008ddf67973775b.js'></script>
+<div id="adContainer">
+    <div class="closeButton" onclick="closeAd()">×</div>
+    <div class="adContent">
+        <p class="adMessage">❤️ This site runs on ads ❤️</p>
+
+        <script>
+            var afg = {};
+            afg.u = 6289;
+            afg.s = 7;
+            document.write("<scr" + "ipt src='//js.adforgames.com/cd.js'></scr" + "ipt>");
+        </script>
+    </div>
+</div>
 
 
 
@@ -453,3 +473,24 @@
 
 </body>
 </html>
+
+
+
+<script>
+    function showAdContainer() {
+        document.getElementById('adContainer').style.display = 'block';
+    }
+
+    function closeAd() {
+        document.getElementById('adContainer').style.display = 'none';
+    }
+
+    // Show the ad container after a 5-second delay
+    setTimeout(() => {
+        showAdContainer();
+        
+        // Set a 2-minute interval to display the ad again
+        setInterval(showAdContainer, 120000);
+    }, 5000);
+</script>
+
