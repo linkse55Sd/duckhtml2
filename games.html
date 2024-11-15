@@ -640,19 +640,6 @@
     </a>
   </div>
 
-<div id="adContainer">
-    <div class="closeButton" onclick="closeAd()">×</div>
-    <div class="adContent">
-        <p class="adMessage">❤️ This site runs on ads ❤️</p>
-
-        <script>
-            var afg = {};
-            afg.u = 6289;
-            afg.s = 7;
-            document.write("<scr" + "ipt src='//js.adforgames.com/cd.js'></scr" + "ipt>");
-        </script>
-    </div>
-</div>
 
 
 
@@ -719,22 +706,5 @@
 
 
 
-
-
-<script>
-    function showAdContainer() {
-        document.getElementById('adContainer').style.display = 'block';
-    }
-
-    function closeAd() {
-        document.getElementById('adContainer').style.display = 'none';
-    }
-
-    // Show the ad container after a 5-second delay
-    setTimeout(() => {
-        showAdContainer();
-        
-        // Set a 2-minute interval to display the ad again
-        setInterval(showAdContainer, 120000);
     }, 5000);
 </script>
