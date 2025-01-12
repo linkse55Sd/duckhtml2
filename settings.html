@@ -8,134 +8,7 @@
   <link rel="icon" type="image/x-icon" href="https://ucarecdn.com/83cf3af1-07f6-4249-9a15-c144cf448bf8/logo.png">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=VT323&display=swap">
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8X677NPBRV"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-8X677NPBRV');
-  </script>
   <style>
-
-
-    #settingsContainer {
-      background-color: #1f1f1f;
-      padding: 20px;
-      border-radius: 15px;
-      width: 80%;
-      max-width: 800px; /* Limited maximum width */
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-      text-align: center;
-    }
-
-    .setting-item {
-      margin-bottom: 20px;
-    }
-
-    .input-container {
-      margin-bottom: 15px;
-      text-align: left;
-    }
-
-    label {
-      font-family: 'VT323', sans-serif;
-      font-size: 18px;
-      color: #f0f0f0;
-      display: block;
-      margin-bottom: 8px;
-    }
-
-    input[type="text"], select {
-      padding: 10px;
-      border: 2px solid #5aafe8;
-      border-radius: 8px;
-      font-family: 'VT323', sans-serif;
-      font-size: 16px;
-      color: #363636;
-      width: calc(100% - 24px);
-      text-align: center;
-      background-color: #1f1f1f; /* Match theme background */
-    }
-
-    input[type="text"]:focus, select:focus {
-      outline: none;
-      border-color: #ffe44d;
-    }
-
-    .premade-favicons {
-      display: flex;
-      gap: 10px;
-      justify-content: center;
-      margin-top: 15px;
-    }
-
-    .premade-favicons span {
-      display: inline-block;
-      border-radius: 10px;
-      overflow: hidden;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s ease-in-out;
-      cursor: pointer;
-    }
-
-    .premade-favicons span:hover {
-      transform: scale(1.1);
-    }
-
-    .premade-favicons img {
-      display: block;
-      width: 40px;
-      height: 40px;
-    }
-
-    .action-button {
-      background-color: #5aafe8;
-      color: #000000;
-      border: none;
-      border-radius: 8px;
-      padding: 10px 20px;
-      font-family: 'Press Start 2P', sans-serif;
-      font-size: 16px;
-      cursor: pointer;
-      transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
-    }
-
-    .action-button:hover {
-      background-color: #ffe44d;
-      transform: scale(1.05);
-    }
-
-    .action-button:focus {
-      outline: none;
-    }
-
-    h1 {
-      font-size: 48px;
-      color: white;
-      margin-top: 40px;
-      margin-bottom: 20px;
-    }
-
-    #colorSelectorContainer {
-      margin-top: 20px;
-    }
-
-    #colorSelect {
-      padding: 8px;
-      border: 2px solid #5aafe8;
-      border-radius: 8px;
-      font-family: 'VT323', sans-serif;
-      font-size: 16px;
-      color: #363636;
-      background-color: #1f1f1f;
-      cursor: pointer;
-    }
-
-    #colorSelect:hover {
-      background-color: #2f2f2f;
-    }
     body {
       margin: 0;
       font-family: 'VT323', sans-serif;
@@ -193,46 +66,65 @@
       border-color: white;
     }
 
-            /* Ad container style */
-    /* Ad container style */
-    #adContainer {
-        width: 600px; /* Set a specific width for the popup */
-        height: auto; /* Allow height to adjust based on content */
-        position: fixed;
-        top: 20%; /* Position down from the top */
-        left: 50%;
-        transform: translateX(-50%);
-        background-color: #121212; /* Same background color as the ad */
-        display: none; /* Hide the ad container initially */
-        z-index: 1000; /* Ensure the ad is above other content */
-        border-radius: 10px; /* Rounded corners */
-        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
-        padding: 20px; /* Padding around the content */
-        text-align: center; /* Center text */
+    #settingsContainer {
+      margin-top: 100px;
+      width: 100%;
+      padding: 20px;
     }
 
-    .closeButton {
-        position: absolute;
-        top: 5px;
-        right: 5px;
-        font-size: 24px;
-        color: #fff;
-        cursor: pointer;
-        width: 30px;
-        height: 30px;
-        background-color: #333;
-        border-radius: 5px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
+    .social-box {
+      width: 90%;
+      max-width: 800px;
+      background-color: #1f1f1f;
+      border-radius: 15px;
+      padding: 20px;
+      margin: 20px auto;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      text-align: left;
     }
 
-    .adMessage {
-        color: #fff; /* White text color */
-        font-size: 18px; /* Font size */
-        margin: 10px 0; /* Margin around the message */
+    .social-box img {
+      width: 80px;
+      height: 80px;
+      border-radius: 10px;
     }
 
+    .social-box-content {
+      flex: 1;
+    }
+
+    .social-box-content h2 {
+      font-family: 'Press Start 2P', sans-serif;
+      font-size: 20px;
+      color: #ffe44d;
+      margin-bottom: 10px;
+    }
+
+    .social-box-content p {
+      margin: 5px 0 15px;
+      font-size: 16px;
+    }
+
+    .action-button {
+      background-color: #5aafe8;
+      color: #000000;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 20px;
+      font-family: 'Press Start 2P', sans-serif;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+      text-align: center;
+    }
+
+    .action-button:hover {
+      background-color: #ffe44d;
+      transform: scale(1.05);
+    }
   </style>
 </head>
 <body>
@@ -249,20 +141,23 @@
 </nav>
 
 <div id="settingsContainer">
-  <h1>Social Media</h1>
-
-  <div class="setting-item">
-    <label for="pageTitle">Instagram</label>
-    <input style="color: white;" type="text" id="pageTitle" placeholder="Enter new title">
-  </div>
-
-  <div class="setting-item">
-    <div class="input-container">
-      <label for="faviconUrl">Discord</label>
-      <input style="color: white;" type="text" id="faviconUrl" placeholder="Enter favicon URL">
+  <div class="social-box">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a5/Instagram_icon.png" alt="Instagram Logo">
+    <div class="social-box-content">
+      <h2>Instagram</h2>
+      <p>Follow us on Instagram for the latest updates, sneak peeks, and more!</p>
+      <button class="action-button" onclick="window.location.href='https://instagram.com'">Follow Us</button>
     </div>
   </div>
-  <button class="action-button"  onclick="window.location.href='example.com'">Follow us</button>
+
+  <div class="social-box">
+    <img src="https://upload.wikimedia.org/wikipedia/en/9/98/Discord_logo.svg" alt="Discord Logo">
+    <div class="social-box-content">
+      <h2>Discord</h2>
+      <p>Join our Discord community to chat with us and other players, share feedback, and more!</p>
+      <button class="action-button" onclick="window.location.href='https://discord.com'">Join Us</button>
+    </div>
+  </div>
 </div>
 </body>
 </html>
