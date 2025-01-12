@@ -1,135 +1,461 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PlayZoneX</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #1e1e2f;
-            color: #ffffff;
-        }
-        header {
-            background-color: #121212;
-            padding: 10px 20px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        header .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #f39c12;
-            text-decoration: none;
-        }
-        header nav a {
-            margin: 0 15px;
-            color: #ffffff;
-            text-decoration: none;
-            font-size: 16px;
-        }
-        header nav a:hover {
-            color: #f39c12;
-        }
-        .hero {
-            text-align: center;
-            padding: 50px 20px;
-        }
-        .hero h1 {
-            font-size: 48px;
-            color: #f39c12;
-        }
-        .hero p {
-            font-size: 18px;
-            margin: 20px 0;
-        }
-        .games-container {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
-            justify-content: center;
-            padding: 20px;
-        }
-        .game-card {
-            background-color: #2c2c3b;
-            border-radius: 10px;
-            width: 200px;
-            padding: 15px;
-            text-align: center;
-        }
-        .game-card img {
-            width: 100%;
-            border-radius: 10px;
-        }
-        .game-card h3 {
-            font-size: 18px;
-            margin: 10px 0;
-        }
-        .game-card a {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 8px 15px;
-            background-color: #f39c12;
-            color: #ffffff;
-            text-decoration: none;
-            border-radius: 5px;
-            font-size: 14px;
-        }
-        .game-card a:hover {
-            background-color: #d47c0c;
-        }
-        footer {
-            background-color: #121212;
-            text-align: center;
-            padding: 15px 20px;
-            margin-top: 30px;
-        }
-        footer p {
-            font-size: 14px;
-            margin: 0;
-            color: #f39c12;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="DuckHTML Unblocked Games, Free to play">
+  <title>PlayZoneX</title>
+  <link rel="icon" type="image/x-icon" href="https://ucarecdn.com/83cf3af1-07f6-4249-9a15-c144cf448bf8/logo.png">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=VT323&display=swap">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-8X677NPBRV"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-8X677NPBRV');
+  </script>
+  <style>
+
+
+    #settingsContainer {
+      background-color: #1f1f1f;
+      padding: 20px;
+      border-radius: 15px;
+      width: 80%;
+      max-width: 800px; /* Limited maximum width */
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+      text-align: center;
+    }
+
+    .setting-item {
+      margin-bottom: 20px;
+    }
+
+    .input-container {
+      margin-bottom: 15px;
+      text-align: left;
+    }
+
+    label {
+      font-family: 'VT323', sans-serif;
+      font-size: 18px;
+      color: #f0f0f0;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    input[type="text"], select {
+      padding: 10px;
+      border: 2px solid #5aafe8;
+      border-radius: 8px;
+      font-family: 'VT323', sans-serif;
+      font-size: 16px;
+      color: #363636;
+      width: calc(100% - 24px);
+      text-align: center;
+      background-color: #1f1f1f; /* Match theme background */
+    }
+
+    input[type="text"]:focus, select:focus {
+      outline: none;
+      border-color: #ffe44d;
+    }
+
+    .premade-favicons {
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      margin-top: 15px;
+    }
+
+    .premade-favicons span {
+      display: inline-block;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease-in-out;
+      cursor: pointer;
+    }
+
+    .premade-favicons span:hover {
+      transform: scale(1.1);
+    }
+
+    .premade-favicons img {
+      display: block;
+      width: 40px;
+      height: 40px;
+    }
+
+    .action-button {
+      background-color: #5aafe8;
+      color: #000000;
+      border: none;
+      border-radius: 8px;
+      padding: 10px 20px;
+      font-family: 'Press Start 2P', sans-serif;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease-in-out, transform 0.2s ease-in-out;
+    }
+
+    .action-button:hover {
+      background-color: #ffe44d;
+      transform: scale(1.05);
+    }
+
+    .action-button:focus {
+      outline: none;
+    }
+
+    h1 {
+      font-size: 48px;
+      color: white;
+      margin-top: 40px;
+      margin-bottom: 20px;
+    }
+
+    #colorSelectorContainer {
+      margin-top: 20px;
+    }
+
+    #colorSelect {
+      padding: 8px;
+      border: 2px solid #ffd700;
+      border-radius: 8px;
+      font-family: 'VT323', sans-serif;
+      font-size: 16px;
+      color: #363636;
+      background-color: #1f1f1f;
+      cursor: pointer;
+    }
+
+    #colorSelect:hover {
+      background-color: #2f2f2f;
+    }
+    body {
+      margin: 0;
+      font-family: 'VT323', sans-serif;
+      background-color: #121212;
+      color: #f0f0f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    nav {
+      width: 100%;
+      position: fixed;
+      top: 0;
+      background-color: rgba(0, 0, 0, 0.5);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px;
+      z-index: 1000;
+    }
+
+    nav .logo {
+      display: flex;
+      align-items: center;
+    }
+
+    nav .logo img {
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    nav .logo span {
+      font-size: 24px;
+      color: white;
+      font-weight: bold;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: white;
+      font-family: 'Press Start 2P', sans-serif;
+      font-weight: bold;
+      font-size: 16px;
+      transition: color 0.3s ease-in-out, border 0.3s ease-in-out;
+      border: 2px solid transparent;
+      border-radius: 8px;
+      padding: 8px 16px;
+    }
+
+    nav a:hover {
+      color: #ffd700;
+      border-color: white;
+    }
+
+            /* Ad container style */
+    /* Ad container style */
+    #adContainer {
+        width: 600px; /* Set a specific width for the popup */
+        height: auto; /* Allow height to adjust based on content */
+        position: fixed;
+        top: 20%; /* Position down from the top */
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #121212; /* Same background color as the ad */
+        display: none; /* Hide the ad container initially */
+        z-index: 1000; /* Ensure the ad is above other content */
+        border-radius: 10px; /* Rounded corners */
+        box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+        padding: 20px; /* Padding around the content */
+        text-align: center; /* Center text */
+    }
+
+    .closeButton {
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        font-size: 24px;
+        color: #fff;
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        background-color: #333;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .adMessage {
+        color: #fff; /* White text color */
+        font-size: 18px; /* Font size */
+        margin: 10px 0; /* Margin around the message */
+    }
+
+  </style>
 </head>
 <body>
-    <header>
-        <a href="#" class="logo">PlayZoneX</a>
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">Games</a>
-            <a href="#">About</a>
-            <a href="#">Contact</a>
-        </nav>
-    </header>
+<nav>
+  <div class="logo">
+    <img src="https://ucarecdn.com/83cf3af1-07f6-4249-9a15-c144cf448bf8/logo.png" alt="DuckHTML Logo">
+    <span>PlayZoneX</span>
+  </div>
+  <div>
+    <a href="/index.html">Home</a>
+    <a href="/games.html">Games</a>
+    <a href="/settings.html">Settings</a>
+  </div>
+</nav>
 
-    <section class="hero">
-        <h1>Welcome to PlayZoneX</h1>
-        <p>Your ultimate destination for online games.</p>
-    </section>
+<div id="settingsContainer">
+  <h1>Settings</h1>
 
-    <section class="games-container">
-        <div class="game-card">
-            <img src="game1.jpg" alt="Game 1">
-            <h3>Game Title 1</h3>
-            <a href="#">Play Now</a>
-        </div>
-        <div class="game-card">
-            <img src="game2.jpg" alt="Game 2">
-            <h3>Game Title 2</h3>
-            <a href="#">Play Now</a>
-        </div>
-        <div class="game-card">
-            <img src="game3.jpg" alt="Game 3">
-            <h3>Game Title 3</h3>
-            <a href="#">Play Now</a>
-        </div>
-    </section>
+  <div class="setting-item">
+    <label for="pageTitle">Title:</label>
+    <input style="color: white;" type="text" id="pageTitle" placeholder="Enter new title">
+  </div>
 
-    <footer>
-        <p>&copy; 2025 PlayZoneX. All rights reserved.</p>
-    </footer>
+  <div class="setting-item">
+    <div class="input-container">
+      <label for="faviconUrl">Favicon URL:</label>
+      <input style="color: white;" type="text" id="faviconUrl" placeholder="Enter favicon URL">
+    </div>
+    <div class="premade-favicons">
+      <span onclick="selectFavicon('https://www.google.com/favicon.ico')">
+        <img src="https://www.google.com/favicon.ico" alt="Google Favicon">
+      </span>
+      <span onclick="selectFavicon('https://ssl.gstatic.com/docs/doclist/images/infinite_arrow_favicon_5.ico')">
+        <img src="https://ssl.gstatic.com/docs/doclist/images/infinite_arrow_favicon_5.ico" alt="Google Drive Favicon">
+      </span>
+      <span onclick="selectFavicon('https://assets.clever.com/resource-icons/apps/5148b6242e35482071000011/icon_964188f.png')">
+        <img src="https://assets.clever.com/resource-icons/apps/5148b6242e35482071000011/icon_964188f.png" alt="iReady Favicon">
+      </span>
+      <span onclick="selectFavicon('https://www.gstatic.com/classroom/ic_product_classroom_32.png')">
+        <img src="https://www.gstatic.com/classroom/ic_product_classroom_32.png" alt="Google Favicon">
+      </span>
+      <span onclick="selectFavicon('https://cdn-icons-png.flaticon.com/512/5968/5968517.png')">
+        <img src="https://cdn-icons-png.flaticon.com/512/5968/5968517.png" alt="Google Favicon">
+      </span>
+      <span onclick="selectFavicon('https://www.clever.com/wp-content/uploads/2023/06/cropped-Favicon-512px-192x192.png')">
+        <img src="https://www.clever.com/wp-content/uploads/2023/06/cropped-Favicon-512px-192x192.png" alt="Google Favicon">
+      </span>
+    </div>
+  </div>
+  
+  <div class="setting-item">
+    <h2>Theme:</h2>
+    <div style="color: white;" id="colorSelectorContainer">
+      <select id="colorSelect" onchange="changeBackgroundColor()">
+        <option style="color: white;" value="default">Default</option>
+        <option style="color: white;" value="white">White</option>
+        <option style="color: white;" value="ocean">Ocean</option>
+        <option style="color: white;" value="leaf">Leaf</option>
+        <option style="color: white;"  value="beach">Beach</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="setting-item">
+    <h2>Panic Key</h2>
+    <p>A panic key is a key you click when somebody is around. Once clicked it redirects you to a different website of your choosing.</p>
+    <div class="input-container">
+      <label style="color: white;" for="panicKey">Panic Key:</label>
+      <input style="color: white;" type="text" id="panicKey" placeholder="Enter panic key">
+    </div>
+    <div class="input-container">
+      <label for="panicUrl">Redirect URL:</label>
+      <input type="text" id="panicUrl" style="color: white;" placeholder="Enter URL to redirect">
+    </div>
+  </div>
+
+  <button class="action-button" onclick="applyChanges()">Apply Changes</button>
+</div>
+<script type='text/javascript' src='//pl24530633.profitablecpmrate.com/8a/26/04/8a2604b7dc51db332008ddf67973775b.js'></script>
+
+
+  <script>
+    // Function to apply changes to title, favicon, and theme
+    function applyChanges() {
+      var newTitle = document.getElementById('pageTitle').value;
+      var newFavicon = document.getElementById('faviconUrl').value;
+      var selectedTheme = document.getElementById('colorSelect').value;
+      var panicKey = document.getElementById('panicKey').value.toLowerCase();
+      var panicUrl = document.getElementById('panicUrl').value;
+
+      localStorage.setItem('pageTitle', newTitle);
+      localStorage.setItem('faviconUrl', newFavicon);
+      localStorage.setItem('panicKey', panicKey); // Store panic key
+      localStorage.setItem('panicUrl', panicUrl); // Store panic URL
+
+      document.title = newTitle;
+      updateFavicon(newFavicon);
+      applyTheme(selectedTheme);
+    }
+
+    // Function to set up panic key functionality
+    function setupPanicKey() {
+      var panicKey = localStorage.getItem('panicKey') || '';
+      var panicUrl = localStorage.getItem('panicUrl') || '';
+
+      document.addEventListener('keydown', function(event) {
+        if (event.key === panicKey) {
+          window.location.href = panicUrl;
+        }
+      });
+    }
+
+    // Run setup functions on page load
+    window.onload = function() {
+      var savedTitle = localStorage.getItem('pageTitle') || 'DuckHTML';
+      var savedFavicon = localStorage.getItem('faviconUrl') || 'https://ucarecdn.com/cf91fdbc-e959-4737-9276-c5ddb93799a8/duckhtml.png';
+      var savedTheme = localStorage.getItem('theme') || 'default';
+
+      document.getElementById('pageTitle').value = savedTitle;
+      document.getElementById('faviconUrl').value = savedFavicon;
+
+      document.title = savedTitle;
+      updateFavicon(savedFavicon);
+      applyTheme(savedTheme);
+
+      // Setup panic key event listener
+      setupPanicKey();
+    };
+    // Function to update favicon
+    function updateFavicon(faviconUrl) {
+      var link = document.querySelector("link[rel~='icon']") || document.createElement('link');
+      link.type = 'image/x-icon';
+      link.rel = 'icon';
+      link.href = faviconUrl;
+      document.head.appendChild(link);
+    }
+
+    // Function to apply theme based on selected option
+    function applyTheme(theme) {
+      var body = document.body;
+      var nav = document.querySelector('nav');
+      var buttons = document.querySelectorAll('nav a');
+
+      switch (theme) {
+        case 'default':
+          setThemeStyles('#121212', 'rgba(0, 0, 0, 0.5)', '#ffffff', 'transparent'); // Change border color to transparent
+          break;
+        case 'white':
+          setThemeStyles('#ffffff', 'rgba(0, 0, 0, 0.5)', '#ffffff', 'transparent');
+          break;
+        case 'ocean':
+          setThemeStyles('#ADD8E6', '#D5FFFF', '#0000ff', 'transparent');
+          break;
+        case 'leaf':
+          setThemeStyles('#90EE90', '#013220', '#00ff00', 'transparent');
+          break;
+        case 'beach':
+          setThemeStyles('#BC8F8F', '#556B2F', '#D2B48C', 'transparent');
+          break;
+        default:
+          setThemeStyles('#121212', 'rgba(0, 0, 0, 0.5)', '#ffd700', 'transparent');
+          break;
+      }
+
+      localStorage.setItem('theme', theme);
+    }
+
+    // Function to update styles for body, nav, and buttons based on theme
+    function setThemeStyles(bodyColor, navColor, buttonTextColor, buttonBorderColor) {
+      var body = document.body;
+      var nav = document.querySelector('nav');
+      var buttons = document.querySelectorAll('nav a');
+
+      body.style.backgroundColor = bodyColor;
+      nav.style.backgroundColor = navColor;
+      buttons.forEach(function(button) {
+        button.style.color = buttonTextColor;
+        button.style.borderColor = buttonBorderColor; // Set border color separately
+      });
+    }
+
+    // Function to handle change in background color theme
+    function changeBackgroundColor() {
+      var selectedTheme = document.getElementById('colorSelect').value;
+      applyTheme(selectedTheme);
+    }
+
+    // Function to handle favicon selection
+    function selectFavicon(url) {
+      document.getElementById('faviconUrl').value = url;
+      updateFavicon(url);
+    }
+
+    // Function to set up panic key functionality
+    function setupPanicKey() {
+      document.addEventListener('keydown', function(event) {
+        var panicKey = document.getElementById('panicKey').value.toLowerCase();
+        var panicUrl = document.getElementById('panicUrl').value;
+
+        if (event.key === panicKey) {
+          window.location.href = panicUrl;
+        }
+      });
+    }
+
+    // Run setup functions on page load
+    window.onload = function() {
+      var savedTitle = localStorage.getItem('pageTitle') || 'DuckHTML';
+      var savedFavicon = localStorage.getItem('faviconUrl') || 'https://ucarecdn.com/cf91fdbc-e959-4737-9276-c5ddb93799a8/duckhtml.png';
+      var savedTheme = localStorage.getItem('theme') || 'default';
+
+      document.getElementById('pageTitle').value = savedTitle;
+      document.getElementById('faviconUrl').value = savedFavicon;
+
+      document.title = savedTitle;
+      updateFavicon(savedFavicon);
+      applyTheme(savedTheme);
+
+      // Setup panic key event listener
+      setupPanicKey();
+    };
+
+  </script>
+
 </body>
 </html>
